@@ -1,3 +1,4 @@
+
 package edu.utd.controller;
 import edu.utd.model.DatabaseManager;
 import edu.utd.model.UserManager;
@@ -11,5 +12,9 @@ public class FoodController
 	{
 		dbMan = in_dbMan;
 		uMan = in_uMan;
+	}
+	public void saveFoodEntry()
+	{
+	
 	}
 }
