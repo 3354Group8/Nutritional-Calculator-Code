@@ -25,7 +25,7 @@ public class NutritionalCalculator
 		dbMan = new DatabaseManager();
 		uMan = new UserManager();
 		fMan = new FoodItemManager(dbMan);
-		foodCon = new FoodController(dbMan, uMan);
+		foodCon = new FoodController(dbMan, uMan, fMan);
 		userCon = new UserController(dbMan, uMan, fMan);
 		goalCon = new GoalController(dbMan, uMan);
 		state = State.LOGIN;
@@ -39,7 +39,7 @@ public class NutritionalCalculator
 				case LOGIN: LoginView loginView = new LoginView(userCon);
 							state = loginView.run(); 
 							break;
-				case USER: 	UserView userView = new UserView(userCon, foodCon, goalCon);
+				case USER: 	UserView userView = new UserView(foodCon, goalCon);
 							state = userView.run(); 
 							break;
 				default: 	break;

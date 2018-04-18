@@ -10,13 +10,28 @@ public class FoodItemManager {
 		fooditems = dbMan.loadItems();
 	}
 	
+	public boolean addItem(String name, int calories)
+	{
+		for(FoodItem f : fooditems)
+			if(f.getName().equals(name))
+				return false;
+
+		fooditems.add(new FoodItem(name,calories));
+		return true;
+	}
+	
 	public FoodItem find(String str)
 	{
 		for(FoodItem item : fooditems)
-		{
-			if(str.equals(item.getName()));
+			if(item.getName().equals(str))
 				return item;
-		}
+		
 		return null;
 	}
+	
+	public ArrayList<FoodItem> getItems()
+	{ 
+		return fooditems;
+	}
+	
 }

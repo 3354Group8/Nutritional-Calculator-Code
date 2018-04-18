@@ -25,29 +25,4 @@ public class UserController
 	{
 		return dbMan.createUser(username, password);
 	}
-
-	public void loadUser() 
-	{
-		int i = dbMan.loadUser(uMan.getUser().getUsername(), uMan.getUser().getPassword(), uMan, fMan);		
-	}
-
-	public void saveUser() 
-	{
-		
-	}
-
-	public void view()
-	{
-		
-	}
-
-	public void deleteEntry() 
-	{
-		
-	}
-
-	public void addEntry() 
-	{
-		
-	}
 }

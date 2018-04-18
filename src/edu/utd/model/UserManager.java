@@ -30,17 +30,27 @@ public class UserManager
 	public void setGoal(int duration, int cgoal)
 	{
 		goal = new Goal(duration, cgoal);
+		
 	}
-	
 	
 	public Goal getGoal()
 	{ 
 		return goal;
 	}
 
-	public void setEntries(ArrayList<FoodEntry> in_foodEntries)
+	public void addEntry(FoodEntry foodentry)
+	{
+		foodEntries.add(foodentry);
+	}
+	
+	public void deleteEntry(FoodEntry foodentry)
+	{
+		foodEntries.remove(foodentry);
+	}
+	
+	public void setEntries(ArrayList<FoodEntry> foodEntries)
 	{ 
-		foodEntries = in_foodEntries; 
+		this.foodEntries = foodEntries; 
 	}
 	
 	public ArrayList<FoodEntry> getEntries()

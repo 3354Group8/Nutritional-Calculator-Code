@@ -15,12 +15,23 @@ public class GoalController
 	
 	public boolean hasGoal()
 	{
-		return true;
+		if(uMan.getGoal() != null)
+			return true;
+		return false;
 	}
 
-	public boolean editGoal(int duration, int goal)
+	public boolean manageGoal(int duration, int goal)
 	{
 		uMan.setGoal(duration, goal);
+		dbMan.setGoal(uMan.getUser().getUsername(), duration, goal);
 		return true;
+	}
+	
+	public int[] getGoal()
+	{
+		int[] ret = new int[2];
+		ret[0] = uMan.getGoal().getDuration();
+		ret[1] = uMan.getGoal().getCalorieGoal();
+		return ret;
 	}
 }

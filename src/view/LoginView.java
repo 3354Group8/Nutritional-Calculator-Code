@@ -152,15 +152,14 @@ public class LoginView
 	{
 		char [] punctuation = {'.' , ',' , ';' , ':', '?' , '!' , '"' , '\'' , ')' , '('};
 	    if (str != null && str.length() > 0)
-	        return false;
-	    for (int i = 0; i < str.length(); i++) 
-	    {
-	        if (Character.isWhitespace(str.charAt(i))) 
-	          return true;
-	        for (i = 0; i < punctuation.length; i++)
-	            if(str.charAt(i) == punctuation[i])
-	                return true;
-	    }
+	    	for (int i = 0; i < str.length(); i++) 
+	    	{
+	    		if (Character.isWhitespace(str.charAt(i))) 
+	    			return true;
+	    		for (int j = 0; j < punctuation.length; j++)
+	    			if(str.charAt(i) == punctuation[j])
+	    				return true;
+	    	}
 	    return false;
 	}
 }
